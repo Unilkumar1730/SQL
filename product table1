@@ -1,0 +1,21 @@
+USE sales;
+CREATE TABLE Product(
+product_jd INT PRIMARY KEY,
+product_name VARCHAR(100),
+category VARCHAR(50),
+unit_price DECIMAL(10,2)
+);
+INSERT INTO Product(product_jd,product_name,category,unit_price)VALUES
+(101,'Laptop','Electronics',500.00),
+(102,'Smartphone','Electronics',300.00),
+(103,'Headphone','Electronics',30.00),
+(104,'Keyword','Electronics',20.00),
+(105,'Mouse','Electronics',15.00);
+SELECT * FROM Product ;
+SELECT product_name,unit_price FROM Product;
+SELECT product_jd,product_name FROM Product WHERE unit_price >100.00;
+SELECT AVG(unit_price) FROM Product ;
+SELECT product_name,MAX(unit_price) FROM Product GROUP BY  product_name LIMIT 1;
+SELECT product_name,unit_price FROM Product ORDER BY unit_price DESC;
+SELECT product_name,unit_price FROM Product WHERE unit_price BETWEEN 20.00 AND 600.00;
+SELECT product_name,category FROM Product ORDER BY category ASC;
